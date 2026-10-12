@@ -1,1 +1,1 @@
-{"name":"a-little-warmth","version":"1.0.0","private":true,"type":"module","scripts":{"start":"node server.js","test":"node --test tests/*.test.js"}}
+{"name":"a-little-warmth","version":"1.1.0","private":true,"type":"module","scripts":{"start":"node server.js","build":"node scripts/build.mjs","test":"node --test tests/*.test.js"}}

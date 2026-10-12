@@ -24,6 +24,8 @@
 
 [**Download the standalone game**](A-Little-Warmth.html) · Save this HTML file and open it in a browser to play offline.
 
+![Full-screen opening menu](docs/menu-desktop.png)
+
 </div>
 
 ## The game
@@ -69,6 +71,12 @@ This is a gentle physics game about direction, timing, and care. Leaves tumble u
 
 ## Run locally
 
+### Responsive update · v1.1.0
+
+The opening menu now fills the whole browser window. The game adapts to portrait phones, landscape phones, tablets, desktop, and ultrawide screens without stretching its world. Controls and animal warmth summaries stay readable. The **Fullscreen** button requests device fullscreen when supported; the viewport-filling layout also works in normal browser and itch.io embed modes.
+
+See [technical QA results](QA.md) for fixes, tested resolutions, and verification limits. The [original build](releases/A-Little-Warmth-original.zip) remains available.
+
 Requires **Node.js 20 or newer**. No package installation or build step is needed.
 
 For an easier offline option, download `A-Little-Warmth.html` and open that single file directly in your browser. It includes all game code and styles. The development source below uses JavaScript modules and needs a local server.
@@ -83,12 +91,18 @@ Open **http://127.0.0.1:4187** in a modern browser. Serve the game over HTTP: op
 npm test
 ```
 
-The tests cover warmth delivery in all five chapters, wet-leaf loss, wind direction, frost timeout, and branch collision. A small progress record may be stored locally in the browser; it contains no personal data. The game makes no network requests and has no analytics.
+The 14 tests cover warmth delivery in all five chapters, wet-leaf loss, wind direction, frost timeout, branch collision, and pointer mapping across screen shapes. A small progress record may be stored locally in the browser; it contains no personal data. The game makes no network requests and has no analytics.
+
+Regenerate the standalone offline game after source changes:
+
+```sh
+npm run build
+```
 
 ## Upload to itch.io
 
 1. Create an **HTML** game project with the title **A Little Warmth**.
-2. Upload `A-Little-Warmth-itch.zip`, provided with this project. Its root contains `index.html`, `style.css`, `game.js`, and `model.js`.
+2. Upload `A-Little-Warmth-itch.zip`, provided with this project. Its root contains `index.html`, `style.css`, `game.js`, `model.js`, and `viewport.js`.
 3. Select **This file will be played in the browser**.
 4. Use an embed size of **1100 × 860**, enable the fullscreen button, and allow mobile play.
 5. Describe the game and answer the jam's submission questions honestly, including the AI assistance described above.
@@ -101,8 +115,10 @@ index.html       Menu, status, controls, and game canvas
 style.css        Responsive layout and fullscreen presentation
 game.js          Rendering, input, sound, and chapter transitions
 model.js         Leaf physics, shelter warmth, and five level definitions
+viewport.js      Shared responsive rendering and pointer coordinates
 server.js        Dependency-free local preview server
 tests/           Gameplay model checks
+scripts/         Standalone offline build
 ```
 
 ## Credits
