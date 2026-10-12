@@ -22,6 +22,8 @@
 
 [**Download the itch.io build**](A-Little-Warmth-itch.zip)
 
+[**Download the standalone game**](A-Little-Warmth.html) · Save this HTML file and open it in a browser to play offline.
+
 </div>
 
 ## The game
@@ -68,6 +70,8 @@ This is a gentle physics game about direction, timing, and care. Leaves tumble u
 ## Run locally
 
 Requires **Node.js 20 or newer**. No package installation or build step is needed.
+
+For an easier offline option, download `A-Little-Warmth.html` and open that single file directly in your browser. It includes all game code and styles. The development source below uses JavaScript modules and needs a local server.
 
 ```sh
 npm start
