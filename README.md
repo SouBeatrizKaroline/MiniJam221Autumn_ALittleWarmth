@@ -18,6 +18,10 @@
 *A robin shivers in its nest. A hedgehog curls up in a hollow.*  
 *You cannot stop the cold. But you can bring them a little warmth.*
 
+![A Little Warmth in fullscreen: a robin's nest in an autumn forest](docs/preview.png)
+
+[**Download the itch.io build**](A-Little-Warmth-itch.zip)
+
 </div>
 
 ## The game
